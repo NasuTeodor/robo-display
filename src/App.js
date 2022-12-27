@@ -1,11 +1,14 @@
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-import Display from './Components/normal/Display';
+import Assembly from './Assembly';
 
 function App() {
   return (
-    <>
-      <Display />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Assembly />} />
+      </Routes>
+    </Router>
   );
 }
 
