@@ -3,15 +3,11 @@ import { useLoader } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { TextureLoader } from "three";
 import { RectArealightWithHelper } from "../rectAreaLight";
-import TexturaPodea from './images/floor_texture.png';
-import { Rack } from "./models/Rack";
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader'
 
 
 
 function LevelOne() {
-
-    const floorTexture = useLoader(TextureLoader, TexturaPodea);
 
     const baseLevel = useLoader(STLLoader, "./display.stl");
 

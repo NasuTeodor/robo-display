@@ -6,11 +6,8 @@ import { RectArealightWithHelper } from "./rectAreaLight";
 import LevelOne from "./Levels/LevelOne";
 import { useLoader } from "@react-three/fiber";
 
-import pereteTextura from './Levels/images/wall_texture.png';
-
 function Scena() {
 
-    const wallTexture = useLoader(TextureLoader, pereteTextura);
     const wallColor = "#F3E5F5";
 
     return (
@@ -69,5 +66,4 @@ function Scena() {
         </Canvas>
     );
 }
-//imi place penisul de mamut 
 export default Scena
