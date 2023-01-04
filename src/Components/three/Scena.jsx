@@ -15,11 +15,11 @@ function Scena() {
 
     return (
         <Canvas>
-            <ambientLight intensity={2} color={"purple"} position={[-10, 30, 20]}/>
+            {/* <ambientLight intensity={2} color={"purple"} position={[-10, 30, 20]}/> */}
             {/* <Environment preset='sunset' background='only' blur={1} /> */}
             <PerspectiveCamera makeDefault fov={50} position={[-8, 7, 8]} />
             <OrbitControls target={[0, 0, 0]} />
-            {/* <ambientLight position={[0, 10, 0]} intensity={1.7} /> */}
+            <ambientLight position={[0, 10, 0]} intensity={1.7} />
             {/* <directionalLight position={[2, 2, 2]} intensity={0.2} castShadow={true} /> */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0.2, 0, 0.2]} receiveShadow={true}>
                 <planeGeometry attach="geometry" args={[90, 90]} />
@@ -31,46 +31,43 @@ function Scena() {
 
             <LevelOne />
 
-            <mesh position={[5, 2.5, 0]}>
+            {/* <mesh position={[5, 2.5, 0]}>
                 <boxGeometry args={[5, 5, 5]} attach={"geometry"} />
-                <meshBasicMaterial color={wallColor} attach={"material"} />
+                <meshBasicMaterial color={wallColor} attach={"material"} /> */}
                 {/* <Suspense fallback={<meshPhongMaterial attach={"material"} color={0x000000} />}>
                     <meshStandardMaterial map={wallTexture} />
                 </Suspense> */}
-            </mesh>
+            {/* </mesh> */}
 
             {/* LevelTwo HERE */}
 
-            <mesh position={[5, 5, -5]}>
+            {/* <mesh position={[5, 5, -5]}>
                 <boxGeometry args={[5, 10, 5]} attach={"geometry"} />
-                <meshBasicMaterial color={"pink"} attach={"material"} />
+                <meshBasicMaterial color={"pink"} attach={"material"} /> */}
                 {/* <Suspense fallback={<meshPhongMaterial attach={"material"} color={0x000000} />}>
                     <meshStandardMaterial map={wallTexture} />
                 </Suspense> */}
-            </mesh>
+            {/* </mesh> */}
 
             {/* LevelThree HERE */}
 
-            <mesh position={[10, 7.5, -5]}>
+            {/* <mesh position={[10, 7.5, -5]}>
                 <boxGeometry args={[5, 15, 5]} attach={"geometry"} />
-                <meshBasicMaterial color={"purple"} attach={"material"} />
+                <meshBasicMaterial color={"purple"} attach={"material"} /> */}
                 {/* <Suspense fallback={<meshPhongMaterial attach={"material"} color={0x000000} />}>
                     <meshStandardMaterial map={wallTexture} />
                 </Suspense> */}
-            </mesh>
+            {/* </mesh> */}
 
             {/* LevelThree HERE */}
-
+{/* 
             <mesh position={[10, 10, -10]}>
                 <boxGeometry args={[5, 20, 5]} attach={"geometry"} />
                 <meshBasicMaterial color={"silver"} attach={"material"} />
-                {/* <Suspense fallback={<meshPhongMaterial attach={"material"} color={0x000000} />}>
-                    <meshStandardMaterial map={wallTexture} />
-                </Suspense> */}
-            </mesh>
+            </mesh> */}
 
         </Canvas>
     );
 }
-
+//imi place penisul de mamut 
 export default Scena
