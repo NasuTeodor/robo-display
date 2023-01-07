@@ -13,6 +13,7 @@ export default function DisplayLoader(props) {
     });
 
     return (
+    
         <primitive
         rotation={[0, -Math.PI/2, 0]}
         object={gltf.scene}
