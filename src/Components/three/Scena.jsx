@@ -9,24 +9,23 @@ import Display2 from "./Levels/Display2";
 import Display2Obj from "./Levels/Display2Obj";
 import DisplayLoader from "./Levels/DisplayLoader";
 import { Perf } from "r3f-perf";
-import { Bloom, EffectComposer, Noise, SMAA, SSR, TiltShift, Vignette } from "@react-three/postprocessing";
-import { DepthOfFieldEffect, DepthPass } from "postprocessing";
+import { Bloom, DepthOfField, EffectComposer, Noise, SMAA, SSR, TiltShift, Vignette } from "@react-three/postprocessing";
 
 function Scena() {
 
     return (
-        <Canvas>
-        <EffectComposer
-            enabled
-            multisampling={2}
+        <Canvas
+            camera={{ rotateZ: Math.PI }}
+            dpr={window.devicePixelRatio * .9}
+            gl={{
+                powerPreference: 'high-performance',
+                // alpha: false,
+                // antialias: false,
+                stencil: false,
+                depth: false
+            }}
         >
-            {/* <Noise premultiply /> */}
-            <Bloom 
-                intensity={3.0}
-            />
-            <SMAA />
-            <TiltShift opacity={0.3} feather={100} />
-        </EffectComposer>
+            {/* <fog attach={"fog"} color="#161616" near={8} args={['#050505']} /> */}
             {/* <ambientLight intensity={2} color={"purple"} position={[-10, 30, 20]}/> */}
             <Perf position='top-left' />
             <Environment preset='sunset' blur={1} />
@@ -44,10 +43,27 @@ function Scena() {
 
             {/* <LevelOne /> */}
             <Suspense fallback={null}>
-                {/* <Display2 /> */}
-                <DisplayLoader />
+                <Display2 />
+                {/* <DisplayLoader /> */}
                 {/* <Display2Obj /> */}
             </Suspense>
+
+            <EffectComposer multisampling={2} disableNormalPass={true}>
+                {/* <DepthOfField
+                    focusDistance={0}
+                    focalLength={0.02}
+                    bokehScale={2}
+                    height={480}
+                />
+                <Bloom
+                    luminanceThreshold={0}
+                    luminanceSmoothing={0.9}
+                    height={300}
+                    opacity={.2}
+                />
+                <Noise opacity={0.025} />
+                <Vignette eskil={false} offset={0.1} darkness={.7} /> */}
+            </EffectComposer>
 
         </Canvas>
     );
