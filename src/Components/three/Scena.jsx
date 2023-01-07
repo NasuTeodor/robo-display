@@ -9,7 +9,8 @@ import Display2 from "./Levels/Display2";
 import Display2Obj from "./Levels/Display2Obj";
 import DisplayLoader from "./Levels/DisplayLoader";
 import { Perf } from "r3f-perf";
-import { Bloom, EffectComposer, Noise, SSR, Vignette } from "@react-three/postprocessing";
+import { Bloom, EffectComposer, Noise, SMAA, SSR, TiltShift, Vignette } from "@react-three/postprocessing";
+import { DepthOfFieldEffect, DepthPass } from "postprocessing";
 
 function Scena() {
 
@@ -23,7 +24,8 @@ function Scena() {
             <Bloom 
                 intensity={3.0}
             />
-            <SSR />
+            <SMAA />
+            <TiltShift opacity={0.3} feather={100} />
         </EffectComposer>
             {/* <ambientLight intensity={2} color={"purple"} position={[-10, 30, 20]}/> */}
             <Perf position='top-left' />
